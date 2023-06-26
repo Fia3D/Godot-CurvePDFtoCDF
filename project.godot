@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="CurveTest"
+config/name="Test-CurvePDFtoCDF"
 run/main_scene="res://test_curve_pdf_to_cdf.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://preview/chart-bell-curve-cumulative-white.png"

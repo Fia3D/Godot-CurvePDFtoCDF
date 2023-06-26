@@ -1,7 +1,9 @@
 @tool
 @icon("res://addons/curve_pdf_to_cdf/chart-bell-curve-cumulative-white.svg")
 extends Resource
-class_name CurvePDF2CDF
+class_name CurvePDFtoCDF
+
+var _version = "1.0"
 
 @export_range(2, 10000) var sample_size := 100:
 	set(value):
@@ -29,7 +31,7 @@ func _init():
 	pdf_curve.changed.connect(_curve_to_update)
 	
 func _curve_to_update():
-	cdf_curve = CurvePDF2CDF.calculate_cdf_curve(pdf_curve, sample_size)
+	cdf_curve = CurvePDFtoCDF.calculate_cdf_curve(pdf_curve, sample_size)
 	cdf_updated.emit()
 
 func sample_pdf(value, use_non_baked = false):
